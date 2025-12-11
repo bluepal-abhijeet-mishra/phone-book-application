@@ -20,10 +20,10 @@ public class GatewayConfig {
         return builder.routes()
                 .route("user-service", r -> r.path("/api/users/**")
                         .filters(f -> f.filter(filter.apply(new AuthenticationFilter.Config())))
-                        .uri("http://localhost:8080"))
+                        .uri("lb://user-service"))
                 .route("contact-service", r -> r.path("/api/contacts/**")
                         .filters(f -> f.filter(filter.apply(new AuthenticationFilter.Config())))
-                        .uri("http://localhost:8081"))
+                        .uri("lb://contact-service"))
                 .build();
     }
 }
