@@ -5,9 +5,11 @@ const ContactList = ({ contacts, onEdit, onDelete }) => {
             <ul>
                 {contacts.map((contact) => (
                     <li key={contact.id}>
-                        {contact.name} - {contact.phoneNumber}
-                        <button onClick={() => onEdit(contact)}>Edit</button>
-                        <button onClick={() => onDelete(contact.id)}>Delete</button>
+                        <span>{contact.name} - {contact.phoneNumber}</span>
+                        <div className="contact-actions">
+                            <button onClick={() => onEdit(contact)}>Edit</button>
+                            <button className="logout-btn" onClick={() => onDelete(contact.id)}>Delete</button>
+                        </div>
                     </li>
                 ))}
             </ul>

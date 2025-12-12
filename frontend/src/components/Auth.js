@@ -22,7 +22,7 @@ const Auth = ({ onLogin }) => {
                 </div>
                 <button type="submit">{isRegister ? 'Register' : 'Login'}</button>
             </form>
-            <button onClick={() => setIsRegister(!isRegister)}>
+            <button className="auth-toggle" onClick={() => setIsRegister(!isRegister)}>
                 {isRegister ? 'Switch to Login' : 'Switch to Register'}
             </button>
         </div>
